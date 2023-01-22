@@ -4,7 +4,7 @@ import style from './Menu.module.scss';
 
 const Menu = () => {
   return (
-    <section data-name="Menu">
+    <section data-name="Menu" className="mb-12">
       <nav className={style.root}>
         <NavLink className={style.navItem} to="/">
           Home

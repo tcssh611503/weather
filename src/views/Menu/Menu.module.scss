@@ -1,7 +1,7 @@
 .root {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 .navItem {
   padding: 12px 24px;
@@ -11,7 +11,7 @@
   font-weight: bold;
   color: black;
   & + .navItem {
-    margin-left: 20px;
+    margin-left: 50px;
   }
   &:global(.active)  {
     color: white;

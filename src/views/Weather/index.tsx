@@ -9,7 +9,6 @@ import { getWeather } from "../../utils/util";
 
 const Weather = () => {
   
-  // https://medium.com/@osamakhann118/how-to-update-object-with-usestate-how-to-add-object-or-fields-in-array-of-objects-in-usestate-4af5459555d0
   const [values, setValues] = useState<WeatherType.DailyWeatherList>({
       temperature_2m_max: [],
       temperature_2m_min: [],
@@ -35,10 +34,10 @@ const Weather = () => {
         console.log(data.daily);
         //console.log("222222");
 
-        setToday(data.daily.time[0])
-        setTodayMaximumTemperature(data.daily.temperature_2m_max[0])
-        setTodayMinimumTemperature(data.daily.temperature_2m_min[0])
-        setWeatherCode(getWeather(data.daily.weathercode[0]))
+        setToday(data.daily.time[2])
+        setTodayMaximumTemperature(data.daily.temperature_2m_max[2])
+        setTodayMinimumTemperature(data.daily.temperature_2m_min[2])
+        setWeatherCode(getWeather(data.daily.weathercode[2]))
     })
 },[])
 
@@ -47,31 +46,28 @@ const Weather = () => {
       <section data-name="Weather">
         <div className="row">
           <div className={style.daybox}>
-            <label>
-              <input id="switch_night" type="checkbox"/>
-               <div className={style.top}>
-                  <div className={style.dayWeather}>
-                    {weatherCode === "sunny" ? <Sunny></Sunny> : null } 
-                    {weatherCode === "rainy" ? <Rainy></Rainy> : null } 
-                    {weatherCode === "snowy" ? <Snowy></Snowy> : null }
-                    {weatherCode === "cloudy" ? <Cloudy></Cloudy> : null } 
-                   </div>
-                  <div className={style.text_area}>
-                    <div className={style.temperature}>
-                      {todayMaximumTemperature}°C
-                    </div>
-                    <div className={style.temperature}>
-                      {todayMinimumTemperature}°C
-                    </div>
-                  <div className={style.infos}>
-                    <div className={style.address}>
-                      Tokyo
-                      </div>
-                    <div className={style.time}>  {today}     {values.temperature_2m_max[0]}       </div>
+              <div className={style.top}>
+                <div className={style.dayWeather}>
+                  {weatherCode === "sunny" ? <Sunny></Sunny> : null } 
+                  {weatherCode === "rainy" ? <Rainy></Rainy> : null } 
+                  {weatherCode === "snowy" ? <Snowy></Snowy> : null }
+                  {weatherCode === "cloudy" ? <Cloudy></Cloudy> : null } 
                   </div>
+                <div className={style.text_area}>
+                  <div className={style.temperature}>
+                    {todayMaximumTemperature}°C
                   </div>
+                  <div className={style.temperature}>
+                    {todayMinimumTemperature}°C
+                  </div>
+                <div className={style.infos}>
+                  <div className={style.address}>
+                    Tokyo
+                    </div>
+                  <div className={style.time}>  {today}     {values.temperature_2m_max[0]}       </div>
                 </div>
-            </label>
+                </div>
+              </div>
           </div>
         </div>
       </section>
