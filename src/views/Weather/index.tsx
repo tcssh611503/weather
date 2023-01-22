@@ -4,24 +4,37 @@ import Rainy from '../Rainy';
 import Snowy from '../Snowy';
 import Sunny from './../Sunny';
 import Cloudy from './../Cloudy';
-
-
+import { WeatherType } from "../../interface";
 import { getWeather } from "../../utils/util";
 
 const Weather = () => {
   
-  const [posts, setPosts] = useState([])
-  const [today, setToday] = useState("")
-  const [todayMaximumTemperature, setTodayMaximumTemperature] = useState("")
-  const [todayMinimumTemperature, setTodayMinimumTemperature] = useState("")
-  const [weatherCode, setWeatherCode] = useState("")
+  // https://medium.com/@osamakhann118/how-to-update-object-with-usestate-how-to-add-object-or-fields-in-array-of-objects-in-usestate-4af5459555d0
+  const [values, setValues] = useState<WeatherType.DailyWeatherList>({
+      temperature_2m_max: [],
+      temperature_2m_min: [],
+      weathercode: [],
+      time: [],
+  });
+
+  const [today, setToday] = useState<string>("")
+  const [todayMaximumTemperature, setTodayMaximumTemperature] = useState<string>("")
+  const [todayMinimumTemperature, setTodayMinimumTemperature] = useState<string>("")
+  const [weatherCode, setWeatherCode] = useState<string>("")
 
   useEffect(() => {
     fetch('https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo', {method: 'GET'})
     .then(res => res.json())
     .then(data => {
-        setPosts(data.daily)
+        setValues({ ...values, 
+          temperature_2m_max: data.daily.temperature_2m_max,
+          temperature_2m_min: data.daily.temperature_2m_min,
+          weathercode: data.daily.weathercode,
+          time: data.daily.time,
+        })
         console.log(data.daily);
+        //console.log("222222");
+
         setToday(data.daily.time[0])
         setTodayMaximumTemperature(data.daily.temperature_2m_max[0])
         setTodayMinimumTemperature(data.daily.temperature_2m_min[0])
@@ -38,10 +51,10 @@ const Weather = () => {
               <input id="switch_night" type="checkbox"/>
                <div className={style.top}>
                   <div className={style.dayWeather}>
-                    {weatherCode == "sunny" ? <Sunny></Sunny> : null } 
-                    {weatherCode == "rainy" ? <Rainy></Rainy> : null } 
-                    {weatherCode == "snowy" ? <Snowy></Snowy> : null }
-                    {weatherCode == "cloudy" ? <Cloudy></Cloudy> : null } 
+                    {weatherCode === "sunny" ? <Sunny></Sunny> : null } 
+                    {weatherCode === "rainy" ? <Rainy></Rainy> : null } 
+                    {weatherCode === "snowy" ? <Snowy></Snowy> : null }
+                    {weatherCode === "cloudy" ? <Cloudy></Cloudy> : null } 
                    </div>
                   <div className={style.text_area}>
                     <div className={style.temperature}>
@@ -54,7 +67,7 @@ const Weather = () => {
                     <div className={style.address}>
                       Tokyo
                       </div>
-                    <div className={style.time}>  {today}  </div>
+                    <div className={style.time}>  {today}     {values.temperature_2m_max[0]}       </div>
                   </div>
                   </div>
                 </div>
