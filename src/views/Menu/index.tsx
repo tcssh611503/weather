@@ -7,14 +7,14 @@ const Menu = () => {
     <section data-name="Menu" className="mb-12">
       <nav className={style.root}>
         <NavLink className={style.navItem} to="/">
-          Home
+          Today's weather
         </NavLink>
-        <NavLink className={style.navItem} to="/video">
-          Videos
+        <NavLink className={style.navItem} to="/WeekWeather">
+          Ｗeek weather
         </NavLink>
-        <NavLink className={style.navItem} to="/weather">
+        {/* <NavLink className={style.navItem} to="/weather">
           Weather
-        </NavLink>
+        </NavLink> */}
       </nav>
     </section>
   );

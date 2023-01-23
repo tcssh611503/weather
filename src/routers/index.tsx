@@ -1,7 +1,7 @@
 import { HashRouter as Router,Routes, Route,Navigate  } from 'react-router-dom';
 
 import Home from '../views/Home';
-import Videos from '../views/Videos';
+import WeekWeather from '../views/WeekWeather';
 import Menu from '../views/Menu';
 import Weather from '../views/Weather';
 
@@ -14,7 +14,7 @@ const App = (any: any) => {
 						<Routes>
 							{/* Home */}
 							<Route path="/" element={<Home />} /> 
-							<Route path="/video" element={<Videos />}></Route>
+							<Route path="/WeekWeather" element={<WeekWeather />}></Route>
 
 							<Route path="/weather" element={<Weather />}></Route>
 							{/* error page */}

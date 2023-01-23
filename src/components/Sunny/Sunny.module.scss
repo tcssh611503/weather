@@ -1,0 +1,25 @@
+.sunny {
+  width: 75px;
+  height: 27px;
+}
+.sun {
+  fill: #FFD633;
+  stroke: rgba(255, 214, 51, 0.5);
+  stroke-width: 15px;
+  stroke-dasharray: 5px;
+  animation: floating 1s infinite;
+  transition-duration: 0.5s;
+}
+
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

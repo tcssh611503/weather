@@ -64,7 +64,7 @@ const Home = () => {
                   <div className={style.address}>
                     Tokyo
                     </div>
-                  <div className={style.time}>  {today}     {values.temperature_2m_max[0]}       </div>
+                  <div className={style.time}>  {today} </div>
                 </div>
                 </div>
               </div>

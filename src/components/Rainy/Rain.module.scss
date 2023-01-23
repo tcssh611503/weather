@@ -1,0 +1,42 @@
+.rainy {
+  width: 75px;
+  height: 27px;
+}
+
+.cloud {
+  fill: #ccc;
+}
+
+.cloudy {
+  fill: #ccc;
+  stroke-width: 15px;
+  stroke-dasharray: 5px;
+  animation: floating 1s infinite;
+  transition-duration: 0.5s;
+  z-index: 1;
+}
+
+.rain {
+  fill: #4DACFF;
+  stroke: #4DACFF;
+  stroke-width: 3px;
+  stroke-dasharray: 5px;
+  animation: rain 1s infinite linear;
+  transition-duration: 0.5s;
+  z-index: 2;
+}
+
+
+@keyframes rain {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+}
