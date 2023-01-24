@@ -26,3 +26,10 @@
     transform: translateY(0px);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .sunny {
+    margin-top: 30px;
+    margin-left: 100px;
+  }
+}

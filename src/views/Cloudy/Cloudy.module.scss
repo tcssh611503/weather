@@ -58,3 +58,10 @@
 .cloud {
   transition-duration: 0.5s;
 }
+
+@media screen and (max-width: 768px) {
+  .cloudy {
+    margin-top: 30px;
+    margin-left: 100px;
+  }
+}
