@@ -10,17 +10,21 @@ A simple weather app built with React.
 
 + [tailwindcss](https://tailwindcss.com/): A utility-first CSS framework package.
 
+## node.js use v14.18.0
++ run `nvm install 14.18.0`
++ run `nvm use v14.18.0 `
+
 ## Clone & install
 + Clone this repo `git clone git@github.com:tcssh611503/weather.git`
 
-+ `cd react-weather`
-+ run `npm install`
++ `cd weather`
++ run `yarn install`
 
 # Running
-+ run  yarn dev`
++ run yarn dev
 
 ## Build 
-+ run  yarn build`
++ run yarn build
 
 ## The today's weather in Tokyo
 
