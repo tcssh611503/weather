@@ -34,5 +34,8 @@ A simple weather app built with React.
 
 ![](https://imgur.com/LFZyWnO.png)
 
+## github page
+https://tcssh611503.github.io/weather/
+
 ## License
 Released under the [MIT License](http://opensource.org/licenses/MIT).
