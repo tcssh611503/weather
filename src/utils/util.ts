@@ -16,7 +16,6 @@
  *   77	Snow grains
  *   85, 86	Snow showers slight and heavy
  */
-
 export const getWeather = (weatherCode: string) => {
 	let weather = "";
 
@@ -76,4 +75,41 @@ export const getWeather = (weatherCode: string) => {
 
 	return weather;
 };
+
+
+/**
+ * @description Get WeekDay
+ * @param {String} time's format xxxx-xx-xx
+ * @return string
+ * 
+ */
+export const getWeekDay = (time: string) => {
+	let WeekChars = [ "(日)", "(月)", "(火)", "(水)", "(木)", "(金)", "(土)" ];
+	let dayObj = new Date(time);   
+	let wDay = dayObj.getDay();
+    
+	return WeekChars[wDay];
+};
+
+/**
+ * @description format time
+ * @param {String} time's format xxxx-xx-xx
+ * @return string
+ * 
+ */
+export const formatTime = (time: string) => {
+
+	    let dayObj = new Date(time);   
+        const fotmatMonth = dayObj.getMonth()+1
+        const fotmatDay = dayObj.getDate()
+
+        // 轉成字串，如果低於10，前面加上'0'
+        const monthString = (fotmatMonth < 10) ? ('0' + fotmatMonth) : ('' + fotmatMonth)
+        const dayString = (fotmatDay < 10) ? ('0' + fotmatDay) : ('' + fotmatDay)
+        let formatTime = `${monthString}/${dayString}`
+        return formatTime
+};
+
+
+
 

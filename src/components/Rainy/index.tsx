@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import style from './Rain.module.scss';
+import style from './Rainy.module.scss';
 
 const Rainy = () => {
   return (

@@ -12,7 +12,7 @@ import Rainy from '../Rainy';
 import Snowy from '../Snowy';
 import Sunny from '../Sunny';
 import Cloudy from '../Cloudy';
-import { getWeather } from "../../utils/util";
+import { getWeather, getWeekDay } from "../../utils/util";
 
 // const WeekWeatherList: React.FC<any> = props => {
 const WeekWeatherList: React.FC<any> = props => {
@@ -29,9 +29,10 @@ const WeekWeatherList: React.FC<any> = props => {
 		)
 	})
 
-	let temperature_max = DailyWeatherList.temperature_2m_max.map((temperature: String) => <div className="p-4 mt-9 w-72"><h3 className="">{temperature}°C</h3></div>)
-	let temperature_min = DailyWeatherList.temperature_2m_min.map((temperature: String) => <div className="p-4 mt-4 w-72"><h3 className="">{temperature}°C</h3></div>)
-	let day = DailyWeatherList.time.map((time: String) => <div className="p-4 mt-4 w-72"><h3 className="">{time}</h3></div>)
+	let temperature_max = DailyWeatherList.temperature_2m_max.map((temperature: string) => <div className="p-4 mt-9 w-72"><h3 className="">{temperature}°C</h3></div>)
+	let temperature_min = DailyWeatherList.temperature_2m_min.map((temperature: string) => <div className="p-4 mt-4 w-72"><h3 className="">{temperature}°C</h3></div>)
+	let day = DailyWeatherList.time.map((time: string) => <div className="p-4 mt-4 w-72"><h3 className="">{time}  {getWeekDay(time)}</h3></div>)
+	
 	return (
 		<div className="">
 			<div className="">
