@@ -1,6 +1,9 @@
 .sunny {
-  width: 75px;
-  height: 27px;
+  width: 150px;
+  height: 54px;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 200px;
 }
 .sun {
   fill: #FFD633;
@@ -11,7 +14,6 @@
   transition-duration: 0.5s;
 }
 
-
 @keyframes floating {
   0% {
     transform: translateY(0px);
@@ -21,5 +23,12 @@
   }
   100% {
     transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sunny {
+    margin-top: 30px;
+    margin-left: 100px;
   }
 }

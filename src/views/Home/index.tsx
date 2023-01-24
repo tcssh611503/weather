@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import style from './Ｗeather.module.scss';
-import Rainy from '../Rainy';
-import Snowy from '../Snowy';
-import Sunny from './../Sunny';
-import Cloudy from './../Cloudy';
-import { WeatherType } from "../../interface";
+import Rainy from '../../components/TodayWeather/Rainy';
+import Snowy from '../../components/TodayWeather/Snowy';
+import Sunny from '../../components/TodayWeather/Sunny';
+import Cloudy from '../../components/TodayWeather/Cloudy';
 import { getWeather, getWeekDay, formatTime } from "../../utils/util";
 
 const Home = () => {
@@ -18,7 +17,6 @@ const Home = () => {
     fetch('https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo', {method: 'GET'})
     .then(res => res.json())
     .then(data => {
-
         setToday(data.daily.time[0])
         setTodayMaximumTemperature(data.daily.temperature_2m_max[0])
         setTodayMinimumTemperature(data.daily.temperature_2m_min[0])

@@ -1,14 +1,14 @@
-.snowy {
+.rainy {
   width: 75px;
   height: 27px;
 }
 
 .cloud {
-  fill: #FFF;
+  fill: #ccc;
 }
 
 .cloudy {
-  fill: #FFF;
+  fill: #ccc;
   stroke-width: 15px;
   stroke-dasharray: 5px;
   animation: floating 1s infinite;
@@ -16,26 +16,32 @@
   z-index: 1;
 }
 
-.snow {
-  fill: #FFF;
-  stroke: #FFF;
-  stroke-width: 4px;
-  stroke-linecap: round;
-  animation: snow 1s infinite linear;
+.rain {
+  fill: #4DACFF;
+  stroke: #4DACFF;
+  stroke-width: 3px;
+  stroke-dasharray: 5px;
+  animation: rain 1s infinite linear;
   transition-duration: 0.5s;
   z-index: 2;
 }
 
-@keyframes snow {
+@keyframes rain {
   0% {
     transform: translateY(0px);
     opacity: 1;
   }
-  90% {
+  70% {
     opacity: 0.4;
   }
   100% {
     transform: translateY(60px);
     opacity: 0;
   }
+}
+
+.title {
+  font-size: 20px;
+  line-height: 7px;
+  font-weight: 400;
 }

@@ -5,33 +5,31 @@
   font-family: "Hind Vadodara", sans-serif, "微軟正黑體";
 }
 
-
-.bottom {
-  display: inline-block;
-  text-align: center;
+.time {
+  font-size: 20px;
+  line-height: 10px;
+  padding: 10px;
+  font-weight: 500;
 }
 
+.info{
+  font-size: 25px;
+  line-height: 40px;
+  font-weight: 500;
+}
 
-// .bottom .dayweather h3 {
-//   text-align: center;
-//   font-size: 8px;
-//   color: rgba(34, 34, 34, 0.6);
-//   font-weight: 400;
-//   letter-spacing: 1px;
-// }
-// .bottom .dayweather svg {
-//   width: 100%;
-//   max-width: 40px;
-//   height: 40px;
-// }
-// .bottom .dayweather svg .sun {
-//   fill: #FFD633;
-//   stroke: rgba(255, 214, 51, 0.5);
-//   stroke-width: 30px;
-//   stroke-dasharray: 5px;
-// }
-// .bottom .dayweather svg .rain {
-//   stroke: #4DACFF;
-//   stroke-width: 3px;
-//   animation: rain 1s infinite linear;
-// }
+.max {
+  font-weight: 600;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.min {
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.m-model {
+  display: none;
+}

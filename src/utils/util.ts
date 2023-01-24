@@ -98,16 +98,16 @@ export const getWeekDay = (time: string) => {
  * 
  */
 export const formatTime = (time: string) => {
+	let dayObj = new Date(time);   
+	const fotmatMonth = dayObj.getMonth()+1
+	const fotmatDay = dayObj.getDate()
 
-	    let dayObj = new Date(time);   
-        const fotmatMonth = dayObj.getMonth()+1
-        const fotmatDay = dayObj.getDate()
+	//  add '0'
+	const monthString = (fotmatMonth < 10) ? ('0' + fotmatMonth) : ('' + fotmatMonth)
+	const dayString = (fotmatDay < 10) ? ('0' + fotmatDay) : ('' + fotmatDay)
+	let formatTime = `${monthString}/${dayString}`
 
-        // 轉成字串，如果低於10，前面加上'0'
-        const monthString = (fotmatMonth < 10) ? ('0' + fotmatMonth) : ('' + fotmatMonth)
-        const dayString = (fotmatDay < 10) ? ('0' + fotmatDay) : ('' + fotmatDay)
-        let formatTime = `${monthString}/${dayString}`
-        return formatTime
+    return formatTime
 };
 
 

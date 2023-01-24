@@ -10,11 +10,8 @@ const Menu = () => {
           Today's weather
         </NavLink>
         <NavLink className={style.navItem} to="/WeekWeather">
-          Ｗeek weather
+          Ｗeek's weather
         </NavLink>
-        {/* <NavLink className={style.navItem} to="/weather">
-          Weather
-        </NavLink> */}
       </nav>
     </section>
   );

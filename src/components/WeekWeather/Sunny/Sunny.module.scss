@@ -1,9 +1,6 @@
 .sunny {
-  width: 150px;
-  height: 54px;
-  position: absolute;
-  margin-top: 50px;
-  margin-left: 200px;
+  width: 75px;
+  height: 27px;
 }
 .sun {
   fill: #FFD633;
@@ -13,7 +10,6 @@
   animation: floating 1s infinite;
   transition-duration: 0.5s;
 }
-
 
 @keyframes floating {
   0% {
@@ -27,9 +23,8 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .sunny {
-    margin-top: 30px;
-    margin-left: 100px;
-  }
+.title {
+  font-size: 20px;
+  line-height: 7px;
+  font-weight: 400;
 }
